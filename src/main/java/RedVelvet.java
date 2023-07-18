@@ -34,10 +34,10 @@ public class RedVelvet extends Cake implements Cake.Extras {
         this.decorativeMessages.add(message2);
     }
 
-    public void setMessages(String message1, String message2, String message3){
+    public void setMessages(String message1, int age, String message3){
         this.decorativeMessages = new ArrayList<>();
         this.decorativeMessages.add(message1);
-        this.decorativeMessages.add(message2);
+        this.decorativeMessages.add(age + "th");
         this.decorativeMessages.add(message3);
     }
 

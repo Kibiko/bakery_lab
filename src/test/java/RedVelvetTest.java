@@ -113,10 +113,10 @@ public class RedVelvetTest {
     @Test
     public void canAddThreeMessage(){
         ArrayList<String> expected = new ArrayList<>();
-        expected.add("Happy Birthday!");
-        expected.add("Kevin");
-        expected.add("You are old!");
-        redvelvet.setMessages("Happy Birthday!","Kevin","You are old!");
+        expected.add("Happy");
+        expected.add("30th");
+        expected.add("Birthday!");
+        redvelvet.setMessages("Happy",30,"Birthday!");
         assertThat(redvelvet.getMessages()).isEqualTo(expected);
     }
 
