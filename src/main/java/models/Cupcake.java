@@ -24,4 +24,10 @@ public class Cupcake extends Cake{
         return sellPrice;
     }
 
+    public boolean isProfitable() {
+        if (this.calcSellPrice()>cost){
+            return true;
+        }
+        return false;
+    }
 }

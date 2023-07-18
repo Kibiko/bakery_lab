@@ -1,10 +1,9 @@
 package models;
 import interfaces.IEggsNeeded;
-import interfaces.IProfitable;
 
 import java.util.ArrayList;
 
-public class RedVelvet extends Cake implements IEggsNeeded, IProfitable {
+public class RedVelvet extends Cake implements IEggsNeeded{
 
     private int layers;
     private ArrayList<String> decorativeMessages;
@@ -55,10 +54,11 @@ public class RedVelvet extends Cake implements IEggsNeeded, IProfitable {
         return this.layers * 2;
     }
 
-    public boolean isProfitable() {
-        if (this.sellPrice > this.cost){
+    public boolean isProfitable(){
+        if (this.calcSellPrice() > cost){
             return true;
         }
         return false;
     }
+
 }

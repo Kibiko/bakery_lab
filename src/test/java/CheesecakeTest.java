@@ -124,4 +124,15 @@ public class CheesecakeTest {
         assertThat(cheesecake.getEggsNeeded()).isEqualTo(0);
     }
 
+    @Test
+    public void canCheckProfitable(){
+        assertThat(cheesecake.isProfitable()).isEqualTo(true);
+    }
+
+    @Test
+    public void canCheckNonProfitable(){
+        cheesecake.setCost(25);
+        assertThat(cheesecake.isProfitable()).isEqualTo(false);
+    }
+
 }

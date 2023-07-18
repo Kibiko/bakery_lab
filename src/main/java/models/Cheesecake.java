@@ -44,6 +44,13 @@ public class Cheesecake extends Cake implements IEggsNeeded{
         return 0;
     }
 
+    public boolean isProfitable(){
+        if (this.calcSellPrice() > this.cost){
+            return true;
+        }
+        return false;
+    }
+
 
 
 }

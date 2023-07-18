@@ -1,5 +1,5 @@
 package interfaces;
-//makes an interface for related cakes that may require eggs
+//makes an interface for related cakes or future bakes that may require eggs
 public interface IEggsNeeded {
     public int getEggsNeeded();
 

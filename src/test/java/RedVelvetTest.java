@@ -138,9 +138,8 @@ public class RedVelvetTest {
 
     @Test
     public void canCheckNonProfitable(){
-        redvelvet.setSellPrice(1);
+        redvelvet.setCost(100);
         assertThat(redvelvet.isProfitable()).isEqualTo(false);
     }
-
 
 }

@@ -1,6 +1,8 @@
 package models;
 
-public abstract class Cake{
+import interfaces.ISell;
+
+public abstract class Cake implements ISell {
 
     protected String name;
     protected String baseFlavour;

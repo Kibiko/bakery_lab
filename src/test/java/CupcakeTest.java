@@ -96,4 +96,14 @@ public class CupcakeTest {
         assertThat(cupcake.calcSellPrice()).isEqualTo(3.99);
     }
 
+    @Test
+    public void canCheckProfitable(){
+        assertThat(cupcake.isProfitable()).isEqualTo(true);
+    }
+
+    @Test
+    public void canCheckNonProfitable(){
+        cupcake.setCost(10);
+        assertThat(cupcake.isProfitable()).isEqualTo(false);
+    }
 }
