@@ -1,4 +1,7 @@
-public class Cheesecake extends Cake{
+package models;
+import interfaces.IEggsNeeded;
+
+public class Cheesecake extends Cake implements IEggsNeeded{
 
     private boolean baked;
     private String base;
@@ -34,6 +37,12 @@ public class Cheesecake extends Cake{
         return this.sellPrice;
     }
 
+    public int getEggsNeeded(){
+        if (this.getBaked()){
+            return 2;
+        }
+        return 0;
+    }
 
 
 

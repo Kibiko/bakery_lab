@@ -1,3 +1,5 @@
+package models;
+
 public class Cupcake extends Cake{
 
     private String[] toppings;

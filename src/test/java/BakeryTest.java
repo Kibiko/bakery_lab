@@ -1,3 +1,5 @@
+import interfaces.IEggsNeeded;
+import models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -8,12 +10,13 @@ public class BakeryTest {
     Bakery bakery;
     Cake cake;
     RedVelvet redVelvet;
+    Cheesecake cheesecake;
 
     @BeforeEach
     public void setUp(){
-        bakery = new Bakery("Japandi Bakery");
+        bakery = new Bakery("Japandi models.Bakery");
         redVelvet = new RedVelvet("Classic","red_velvet",5,10,false,3);
-        Cheesecake cheesecake = new Cheesecake("New York","vanilla",7,11,false,true,"hobknobs");
+        cheesecake = new Cheesecake("New York","vanilla",7,11,false,true,"hobknobs");
         Cupcake cupcake = new Cupcake("Fancy","milk",2,4,true,3);
         bakery.addCakeToStock(redVelvet);
         bakery.addCakeToStock(cheesecake);
@@ -22,7 +25,7 @@ public class BakeryTest {
 
     @Test
     public void canGetName(){
-        assertThat(bakery.getName()).isEqualTo("Japandi Bakery");
+        assertThat(bakery.getName()).isEqualTo("Japandi models.Bakery");
     }
 
     @Test
@@ -70,9 +73,17 @@ public class BakeryTest {
         assertThat(bakery.getStockProfit()).isEqualTo(11);
     }
 
+    @Test
+    public void canGetEggCakes(){
+        bakery.addEggCakes(redVelvet);
+        assertThat(bakery.getEggCakes().size()).isEqualTo(1);
+    }
 
-
-
-
+    @Test
+    public void canAddEggCakes(){
+        bakery.addEggCakes(redVelvet);
+        bakery.addEggCakes(cheesecake);
+        assertThat(bakery.getEggCakes().size()).isEqualTo(2);
+    }
 
 }

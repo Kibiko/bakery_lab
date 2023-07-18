@@ -1,6 +1,10 @@
+package models;
+import interfaces.IEggsNeeded;
+import interfaces.IProfitable;
+
 import java.util.ArrayList;
 
-public class RedVelvet extends Cake implements Cake.Extras {
+public class RedVelvet extends Cake implements IEggsNeeded, IProfitable {
 
     private int layers;
     private ArrayList<String> decorativeMessages;

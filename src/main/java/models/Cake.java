@@ -1,3 +1,5 @@
+package models;
+
 public abstract class Cake{
 
     protected String name;
@@ -59,11 +61,5 @@ public abstract class Cake{
     }
 
     public abstract double calcSellPrice(); //ABSTRACT METHOD
-
-    interface Extras{
-        public int getEggsNeeded();
-        public boolean isProfitable();
-    }
-
 
 }

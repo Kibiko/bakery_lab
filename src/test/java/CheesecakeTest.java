@@ -1,3 +1,4 @@
+import models.Cheesecake;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -110,6 +111,17 @@ public class CheesecakeTest {
     public void canCalcSellPriceOther(){
         cheesecake.setBase("shortcake");
         assertThat(cheesecake.calcSellPrice()).isEqualTo(7.50);
+    }
+
+    @Test
+    public void getEggsBaked(){
+        assertThat(cheesecake.getEggsNeeded()).isEqualTo(2);
+    }
+
+    @Test
+    public void getEggsNonBaked(){
+        cheesecake.setBaked(false);
+        assertThat(cheesecake.getEggsNeeded()).isEqualTo(0);
     }
 
 }

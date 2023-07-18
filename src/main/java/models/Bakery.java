@@ -1,3 +1,7 @@
+package models;
+
+import interfaces.IEggsNeeded;
+
 import java.util.ArrayList;
 
 public class Bakery {
@@ -5,11 +9,13 @@ public class Bakery {
     private String name;
     private ArrayList<Cake> stock;
     private double till;
+    private ArrayList<IEggsNeeded> eggCakes;
 
     public Bakery(String name){
         this.name = name;
         this.stock = new ArrayList<>();
         this.till = 0;
+        this.eggCakes = new ArrayList<>();
     }
 
     public String getName(){
@@ -50,6 +56,14 @@ public class Bakery {
             sum += (cake.calculateMargin());
         }
         return sum;
+    }
+
+    public void addEggCakes(IEggsNeeded cake){
+        this.eggCakes.add(cake);
+    }
+
+    public ArrayList<IEggsNeeded> getEggCakes(){
+        return this.eggCakes;
     }
 
 }
