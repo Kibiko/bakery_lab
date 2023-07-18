@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class RedVelvet extends Cake{
+public class RedVelvet extends Cake implements Cake.Extras {
 
     private int layers;
     private ArrayList<String> decorativeMessages;
@@ -45,4 +45,16 @@ public class RedVelvet extends Cake{
         return 5.50 + this.layers; //price is now dependent on layer count
     }
 
+    //Interface methods
+
+    public int getEggsNeeded(){
+        return this.layers * 2;
+    }
+
+    public boolean isProfitable() {
+        if (this.sellPrice > this.cost){
+            return true;
+        }
+        return false;
+    }
 }

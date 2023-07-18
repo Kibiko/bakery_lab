@@ -125,5 +125,21 @@ public class RedVelvetTest {
         assertThat(redvelvet.calcSellPrice()).isEqualTo(8.50);
     }
 
+    @Test
+    public void canGetEggsNeeded(){
+        assertThat(redvelvet.getEggsNeeded()).isEqualTo(6);
+    }
+
+    @Test
+    public void canCheckProfitable(){
+        assertThat(redvelvet.isProfitable()).isEqualTo(true);
+    }
+
+    @Test
+    public void canCheckNonProfitable(){
+        redvelvet.setSellPrice(1);
+        assertThat(redvelvet.isProfitable()).isEqualTo(false);
+    }
+
 
 }
