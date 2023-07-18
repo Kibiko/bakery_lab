@@ -15,4 +15,10 @@ public class Cupcake extends Cake{
         this.toppings = toppings;
     }
 
+    public double calcSellPrice() {
+        if(this.vegan){
+            return sellPrice + 0.5;
+        }
+        return sellPrice;
+    }
 }

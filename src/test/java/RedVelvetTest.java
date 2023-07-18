@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class RedVelvetTest {
@@ -10,6 +12,7 @@ public class RedVelvetTest {
     @BeforeEach
     public void setUp(){
         redvelvet = new RedVelvet("Classic","red_velvet",3.50,9.99,false,3);
+        redvelvet.setMessages("Hello");
     }
 
     @Test
@@ -81,6 +84,45 @@ public class RedVelvetTest {
     public void canSetVegan(){
         redvelvet.setVegan(true);
         assertThat(redvelvet.isVegan()).isEqualTo(true);
+    }
+
+    @Test
+    public void canGetMessages(){
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Hello");
+        assertThat(redvelvet.getMessages()).isEqualTo(expected);
+    }
+
+    @Test
+    public void canAddOneMessage(){
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Happy Birthday!");
+        redvelvet.setMessages("Happy Birthday!");
+        assertThat(redvelvet.getMessages()).isEqualTo(expected);
+    }
+
+    @Test
+    public void canAddTwoMessage(){
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Happy Birthday!");
+        expected.add("Kevin");
+        redvelvet.setMessages("Happy Birthday!","Kevin");
+        assertThat(redvelvet.getMessages()).isEqualTo(expected);
+    }
+
+    @Test
+    public void canAddThreeMessage(){
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Happy Birthday!");
+        expected.add("Kevin");
+        expected.add("You are old!");
+        redvelvet.setMessages("Happy Birthday!","Kevin","You are old!");
+        assertThat(redvelvet.getMessages()).isEqualTo(expected);
+    }
+
+    @Test
+    public void canCalcSellPrice(){
+        assertThat(redvelvet.calcSellPrice()).isEqualTo(8.50);
     }
 
 

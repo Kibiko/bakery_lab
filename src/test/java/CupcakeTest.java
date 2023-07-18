@@ -84,5 +84,15 @@ public class CupcakeTest {
         assertThat(cupcake.isVegan()).isEqualTo(false);
     }
 
+    @Test
+    public void canCalcVegan(){
+        assertThat(cupcake.calcSellPrice()).isEqualTo(4.49);
+    }
+
+    @Test
+    public void canCalcNonVegan(){
+        cupcake.setVegan(false);
+        assertThat(cupcake.calcSellPrice()).isEqualTo(3.99);
+    }
 
 }

@@ -94,4 +94,22 @@ public class CheesecakeTest {
         assertThat(cheesecake.isVegan()).isEqualTo(true);
     }
 
+    @Test
+    public void canCalcSellPriceDigestives(){
+        cheesecake.setBase("digestives");
+        assertThat(cheesecake.calcSellPrice()).isEqualTo(9.50);
+    }
+
+    @Test
+    public void canCalcSellPriceHobknobs(){
+        cheesecake.setBase("hobknobs");
+        assertThat(cheesecake.calcSellPrice()).isEqualTo(8.50);
+    }
+
+    @Test
+    public void canCalcSellPriceOther(){
+        cheesecake.setBase("shortcake");
+        assertThat(cheesecake.calcSellPrice()).isEqualTo(7.50);
+    }
+
 }

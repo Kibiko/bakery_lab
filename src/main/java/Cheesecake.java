@@ -25,5 +25,16 @@ public class Cheesecake extends Cake{
         this.base = base;
     }
 
+    public double calcSellPrice(){
+        if(base.equals("hobknobs")){
+            return this.sellPrice + 1;
+        } else if(base.equals("digestives")){
+            return this.sellPrice + 2;
+        }
+        return this.sellPrice;
+    }
+
+
+
 
 }

@@ -58,5 +58,7 @@ public abstract class Cake{
         this.vegan = vegan;
     }
 
+    public abstract double calcSellPrice(); //ABSTRACT METHOD
+
 
 }
