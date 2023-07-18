@@ -23,4 +23,5 @@ public class Cupcake extends Cake{
         }
         return sellPrice;
     }
+
 }
