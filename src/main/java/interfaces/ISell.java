@@ -4,4 +4,6 @@ package interfaces;
 public interface ISell {
 
     public boolean isProfitable();
+    public double calculateMargin();
+
 }

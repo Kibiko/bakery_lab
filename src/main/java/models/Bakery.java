@@ -1,13 +1,14 @@
 package models;
 
 import interfaces.IEggsNeeded;
+import interfaces.ISell;
 
 import java.util.ArrayList;
 
 public class Bakery {
 
     private String name;
-    private ArrayList<Cake> stock;
+    private ArrayList<ISell> stock;
     private double till;
     private ArrayList<IEggsNeeded> eggCakes;
 
@@ -26,7 +27,7 @@ public class Bakery {
         this.name = name;
     }
 
-    public ArrayList<Cake> getStock(){
+    public ArrayList<ISell> getStock(){
         return this.stock;
     }
 
@@ -52,7 +53,7 @@ public class Bakery {
 
     public double getStockProfit(){
         double sum = 0;
-        for (Cake cake : this.stock){
+        for (ISell cake : this.stock){
             sum += (cake.calculateMargin());
         }
         return sum;
